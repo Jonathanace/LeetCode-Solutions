@@ -10,9 +10,7 @@ class Solution:
         def traverse(node, prev_max):
             if not node:
                 return
-            # print(node.val, prev_max)
             if node.val >= prev_max:
-                # print('yes!')
                 self.res += 1
             prev_max = max(prev_max, node.val)
             traverse(node.left, prev_max)
