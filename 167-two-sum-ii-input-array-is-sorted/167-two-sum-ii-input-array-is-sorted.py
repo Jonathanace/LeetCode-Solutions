@@ -7,11 +7,7 @@ class Solution:
             while i < len(numbers) - 1 and numbers[i+1] == numbers[i]:
                 prevs[numbers[i]] = i
                 i += 1
-            '''
-            if numbers[i] in prevs:
-                i += 1
-                continue
-            '''
+
             sub = target - numbers[i]
             if sub in prevs:
                 return [prevs[sub]+1, i+1]
