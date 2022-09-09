@@ -22,14 +22,14 @@ class Solution:
             
         # negative pairs
         for i in range(len(neg)):
-            for j in range(i+1, len(neg)):
+            for j in range(i):
                 target = -1 * (neg[i] + neg[j])
                 if target in pos_set:
                     res.add(tuple(sorted([target, neg[i], neg[j]])))
         
         # positive pairs
         for i in range(len(pos)):
-            for j in range(i+1, len(pos)):
+            for j in range(i):
                 target = -1 * (pos[i] + pos[j])
                 if target in neg_set:
                     res.add(tuple(sorted([target, pos[i], pos[j]])))
