@@ -1,14 +1,11 @@
 class Solution:
     def numberOfWeakCharacters(self, properties: List[List[int]]) -> int:
-        
-        properties.sort(key=lambda x: (-x[0],x[1]))
-        
-        ans = 0
-        curr_max = 0
-        
-        for _, d in properties:
-            if d < curr_max:
-                ans += 1
+        properties.sort(key=lambda x: (-x[0],x[1])) # sorted by descending attack, ascending defense
+        prev_def = 0
+        res = 0
+        for _, cur_def in properties: 
+            if cur_def < prev_def:
+                res += 1 
             else:
-                curr_max = d
-        return ans
+                prev_def = cur_def
+        return res
