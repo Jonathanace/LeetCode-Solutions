@@ -1,19 +1,20 @@
+# source: https://leetcode.com/problems/trapping-rain-water/discuss/17364/7-lines-C-C++/447098
 class Solution:
     def trap(self, h: List[int]) -> int:
         l = 0
         r = len(h) - 1
-        floor = 0 
+        ceil = 0 
         res = 0
         
         while l < r: 
             if h[l] < h[r]:
-                lower = h[l]
+                floor = h[l]
                 l += 1
             else:
-                lower = h[r]
+                floor = h[r]
                 r -= 1
                 
-            floor = max(floor, lower)
-            res += (floor - lower)
+            ceil = max(ceil, floor)
+            res += (ceil - floor)
         
         return res
