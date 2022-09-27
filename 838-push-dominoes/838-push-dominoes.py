@@ -4,7 +4,7 @@ class Solution:
         last_fall_index = 0
         res = ['.'] * len(dominoes)
         for i in range(len(dominoes)):
-            print(dominoes[i])
+            # print(dominoes[i])
             if dominoes[i] == 'L' and last_fall == 'R':
                 num_between = i - last_fall_index - 1
                 for j in range(last_fall_index+1, last_fall_index + num_between//2 + 1):
