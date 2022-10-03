@@ -1,17 +1,18 @@
 class Solution:
     def minCost(self, colors: str, neededTime: List[int]) -> int:
         time = 0
-        i = 0
-        while i < len(colors):
+        start = 0
+        while start < len(colors):
             # find span of same colored baloons
-            j = i + 1
-            while j < len(colors) and colors[j] == colors[i]:
-                j += 1
+            end = start + 1
+            while end < len(colors) and colors[end] == colors[start]:
+                end += 1
                 
-            # delete all baloons except the one that takes the most time to remove
-            time += sum(sorted(neededTime[i:j])[:-1])
+            # remove all baloons except the one that takes the most time to remove
+            time += sum(sorted(neededTime[start:end])[:-1])
             
-            # update i
-            i = j-1
-            i += 1
+            # update start
+            start = end-1
+            start += 1
+            
         return time
