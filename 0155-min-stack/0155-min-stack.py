@@ -3,10 +3,10 @@ class MinStack:
         self.q = []
 
     def push(self, val):
-        curMin = self.getMin()
-        if curMin == None or val < curMin:
-            curMin = val
-        self.q.append((val, curMin));
+        minimum = val
+        if self.getMin() != None:
+            minimum = min(minimum, self.getMin())
+        self.q.append((val, minimum));
 
     # @return nothing
     def pop(self):
