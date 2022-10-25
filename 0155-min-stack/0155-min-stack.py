@@ -1,15 +1,12 @@
 class MinStack:
-
     def __init__(self):
         self.q = []
 
-    # @param x, an integer
-    # @return an integer
-    def push(self, x):
+    def push(self, val):
         curMin = self.getMin()
-        if curMin == None or x < curMin:
-            curMin = x
-        self.q.append((x, curMin));
+        if curMin == None or val < curMin:
+            curMin = val
+        self.q.append((val, curMin));
 
     # @return nothing
     def pop(self):
