@@ -4,7 +4,7 @@ class MinStack:
 
     def push(self, val):
         minimum = val
-        if self.getMin() != None:
+        if self.getMin() is not None:
             minimum = min(minimum, self.getMin())
         self.q.append((val, minimum));
 
