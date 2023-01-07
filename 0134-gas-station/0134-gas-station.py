@@ -1,4 +1,4 @@
-class Solution:
+class Solution: # solution from https://leetcode.com/problems/gas-station/discuss/1705893/Python3-DEBIT-AND-CREDIT-O(1)-SPACE-(-)-Explained
     def canCompleteCircuit(self, gas: List[int], cost: List[int]) -> int:
         candidate = None
         credit = 0
