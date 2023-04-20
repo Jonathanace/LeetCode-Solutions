@@ -3,11 +3,13 @@ class Solution:
         squares, rows, columns = defaultdict(set), defaultdict(set), defaultdict(set)
         for row in range(9):
             for column in range(9):
+                
                 # check for valid number
-                try:
-                    num = int(board[row][column])
-                except:
-                    continue
+                num = board[row][column]
+                if num == '.':
+                    continue 
+                else:
+                    num = int(num) 
                 
                 # check row
                 if num in rows[row]:
@@ -28,4 +30,4 @@ class Solution:
                 else:
                     squares[square].add(num)
         
-        return True 
+        return True # no repeats
